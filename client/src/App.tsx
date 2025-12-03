@@ -7,6 +7,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import Collections from "./pages/Collections";
+import ProductDetail from "./pages/ProductDetail";
 
 function Router() {
   return (
@@ -14,13 +16,9 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         
-        {/* Rotas Futuras - Placeholders */}
-        <Route path="/colecoes">
-          <PlaceholderPage 
-            title="Nossas Coleções" 
-            description="Explore nossas linhas exclusivas de sabonetes artesanais, cada uma criada com uma história e propósito únicos."
-          />
-        </Route>
+        {/* Catálogo de Produtos */}
+        <Route path="/colecoes" component={Collections} />
+        <Route path="/produto/:id" component={ProductDetail} />
         
         <Route path="/ingredientes">
           <PlaceholderPage 
