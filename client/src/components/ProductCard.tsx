@@ -40,7 +40,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             R$ {product.price.toFixed(2).replace('.', ',')}
           </span>
           
-          <Link href={`/produto/${product.id}`}>
+          <Link href={`/produto/${product.id}`} asChild>
             <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80 hover:bg-primary/5 p-0 font-semibold group/btn">
               Ver Detalhes <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
             </Button>

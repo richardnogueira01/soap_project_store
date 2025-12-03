@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { ShoppingBag, Menu, X, Instagram, Facebook, Mail } from "lucide-react";
+import { ShoppingBag, Menu, Instagram, Facebook, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -41,16 +41,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] bg-background border-r border-border">
                 <nav className="flex flex-col gap-6 mt-10">
-                  <Link href="/">
-                    <a className="text-2xl font-serif font-bold text-primary mb-4">Sabonetes Artesanais</a>
+                  <Link href="/" className="text-2xl font-serif font-bold text-primary mb-4">
+                    Sabonetes Artesanais
                   </Link>
                   {navLinks.map((link) => (
-                    <Link key={link.path} href={link.path}>
-                      <a className={`text-lg font-medium transition-colors hover:text-primary ${
+                    <Link 
+                      key={link.path} 
+                      href={link.path}
+                      className={`text-lg font-medium transition-colors hover:text-primary ${
                         location === link.path ? "text-primary" : "text-foreground/80"
-                      }`}>
-                        {link.name}
-                      </a>
+                      }`}
+                    >
+                      {link.name}
                     </Link>
                   ))}
                 </nav>
@@ -59,21 +61,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           {/* Logo */}
-          <Link href="/">
-            <a className="text-2xl md:text-3xl font-serif font-bold text-primary tracking-tight">
-              Sabonetes Artesanais
-            </a>
+          <Link href="/" className="text-2xl md:text-3xl font-serif font-bold text-primary tracking-tight">
+            Sabonetes Artesanais
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.path} href={link.path}>
-                <a className={`text-sm font-medium uppercase tracking-widest transition-colors hover:text-primary ${
+              <Link 
+                key={link.path} 
+                href={link.path}
+                className={`text-sm font-medium uppercase tracking-widest transition-colors hover:text-primary ${
                   location === link.path ? "text-primary" : "text-foreground/80"
-                }`}>
-                  {link.name}
-                </a>
+                }`}
+              >
+                {link.name}
               </Link>
             ))}
           </nav>
@@ -111,16 +113,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.path}>
-                    <Link href={link.path}>
-                      <a className="text-muted-foreground hover:text-primary transition-colors">
-                        {link.name}
-                      </a>
+                    <Link 
+                      href={link.path}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.name}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/sobre">
-                    <a className="text-muted-foreground hover:text-primary transition-colors">Nossa História</a>
+                  <Link 
+                    href="/sobre"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Nossa História
                   </Link>
                 </li>
               </ul>

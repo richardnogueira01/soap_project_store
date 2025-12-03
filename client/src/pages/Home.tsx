@@ -27,12 +27,12 @@ export default function Home() {
             Sabonetes feitos à mão com ingredientes botânicos selecionados para nutrir sua pele e acalmar sua mente.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/colecoes">
+            <Link href="/colecoes" asChild>
               <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold px-8 rounded-full h-14 text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
                 Ver Coleção
               </Button>
             </Link>
-            <Link href="/sobre">
+            <Link href="/sobre" asChild>
               <Button variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/20 font-semibold px-8 rounded-full h-14 text-lg backdrop-blur-sm">
                 Nossa História
               </Button>
@@ -109,7 +109,7 @@ export default function Home() {
                 duradoura e rica em glicerina natural. Não vendemos apenas limpeza, vendemos um momento de pausa no seu dia.
               </p>
               <div className="pt-4">
-                <Link href="/sobre">
+                <Link href="/sobre" asChild>
                   <Button variant="link" className="text-primary p-0 text-lg font-semibold hover:text-primary/80 group">
                     Conheça nosso processo <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -149,7 +149,7 @@ export default function Home() {
                 ))}
               </ul>
               <div className="pt-6">
-                <Link href="/ingredientes">
+                <Link href="/ingredientes" asChild>
                   <Button className="rounded-full px-8 py-6 text-lg">
                     Ver Todos os Ingredientes
                   </Button>
@@ -201,7 +201,7 @@ export default function Home() {
                 Edição limitada disponível em breve.
               </p>
               <div>
-                <Link href="/colecoes">
+                <Link href="/colecoes" asChild>
                   <Button size="lg" variant="secondary" className="rounded-full px-8 font-semibold text-primary bg-white hover:bg-white/90 border-none">
                     Explorar Loja
                   </Button>

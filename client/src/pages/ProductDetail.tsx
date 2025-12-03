@@ -15,7 +15,7 @@ export default function ProductDetail() {
       <div className="container">
         {/* Breadcrumb / Back */}
         <div className="mb-8">
-          <Link href="/colecoes">
+          <Link href="/colecoes" asChild>
             <Button variant="ghost" className="pl-0 text-muted-foreground hover:text-primary gap-2">
               <ArrowLeft className="h-4 w-4" /> Voltar para Coleções
             </Button>
