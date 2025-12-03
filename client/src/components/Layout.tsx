@@ -42,7 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <SheetContent side="left" className="w-[300px] bg-background border-r border-border">
                 <nav className="flex flex-col gap-6 mt-10">
                   <Link href="/" className="text-2xl font-serif font-bold text-primary mb-4">
-                    Sabonetes Artesanais
+                    Frutteto Aróma
                   </Link>
                   {navLinks.map((link) => (
                     <Link 
@@ -62,7 +62,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Logo */}
           <Link href="/" className="text-2xl md:text-3xl font-serif font-bold text-primary tracking-tight">
-            Sabonetes Artesanais
+            Frutteto Aróma
           </Link>
 
           {/* Desktop Nav */}
@@ -151,7 +151,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
           
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Sabonetes Artesanais. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Frutteto Aróma. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
