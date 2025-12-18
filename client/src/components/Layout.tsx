@@ -1,8 +1,11 @@
 import { Link, useLocation } from "wouter";
-import { ShoppingBag, Menu, Instagram, Facebook, Mail } from "lucide-react";
+import { ShoppingBag, Menu, Instagram, Mail } from "lucide-react";
+import { TikTokIcon } from "@/components/TikTokIcon";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { BrandHeader } from "@/components/BrandHeader";
+import { CartDrawer } from "@/components/CartDrawer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
@@ -41,9 +44,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] bg-background border-r border-border">
                 <nav className="flex flex-col gap-6 mt-10">
-                  <Link href="/" className="text-2xl font-serif font-bold text-primary mb-4">
-                    Frutteto Aróma
-                  </Link>
+                  <BrandHeader 
+                    href="/" 
+                    logoSize="sm"
+                    className="mb-4"
+                  />
                   {navLinks.map((link) => (
                     <Link 
                       key={link.path} 
@@ -61,9 +66,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           {/* Logo */}
-          <Link href="/" className="text-2xl md:text-3xl font-serif font-bold text-primary tracking-tight">
-            Frutteto Aróma
-          </Link>
+          <BrandHeader 
+            href="/" 
+            logoSize="sm"
+          />
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
@@ -82,11 +88,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Cart / Actions */}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="relative text-foreground hover:text-primary transition-colors">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="absolute top-1 right-1 h-2 w-2 bg-primary rounded-full"></span>
-              <span className="sr-only">Carrinho</span>
-            </Button>
+            <CartDrawer />
           </div>
         </div>
       </header>
@@ -133,17 +135,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-serif font-semibold text-primary">Contato</h3>
+              <h3 className="text-xl font-serif font-semibold text-primary">Contatos</h3>
               <div className="flex flex-col gap-2 text-muted-foreground">
-                <a href="mailto:contato@sabonetesartesanais.com" className="hover:text-primary transition-colors flex items-center gap-2">
-                  <Mail className="h-4 w-4" /> contato@sabonetesartesanais.com
+                <a href="mailto:serdeamora@gmail.com" className="hover:text-primary transition-colors flex items-center gap-2">
+                  <Mail className="h-4 w-4" /> serdeamora@gmail.com
                 </a>
                 <div className="flex gap-4 mt-4">
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="https://www.instagram.com/serdearoma/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
                     <Instagram className="h-5 w-5" />
                   </a>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    <Facebook className="h-5 w-5" />
+                  <a href="https://www.tiktok.com/@serdearoma" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                    <TikTokIcon className="h-5 w-5" />
                   </a>
                 </div>
               </div>
