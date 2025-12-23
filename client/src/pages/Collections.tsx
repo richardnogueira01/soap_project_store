@@ -25,7 +25,7 @@ export default function Collections() {
             Nossas Coleções
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Explore nossa seleção de sabonetes artesanais, cada um formulado para proporcionar 
+            Explore nossa seleção de sabonetes artesanais, perfumes para cabelos e esfoliantes de pele! cada um formulado para proporcionar 
             uma experiência única de cuidado e bem-estar.
           </p>
         </div>

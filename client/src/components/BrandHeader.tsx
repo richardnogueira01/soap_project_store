@@ -19,7 +19,7 @@ export function BrandHeader({
   return (
     <Link href={href}>
       <div className={`flex items-center gap-3 cursor-pointer ${className}`}>
-        {showLogo && <Logo size={logoSize} brandName="AROMA" />}
+        {showLogo && <Logo size={logoSize} />}
         <span className="text-2xl md:text-3xl font-serif font-bold text-primary tracking-tight">
           {title}
         </span>

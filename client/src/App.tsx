@@ -25,13 +25,6 @@ function Router() {
         <Route path="/colecoes" component={Collections} />
         <Route path="/produto/:id" component={ProductDetail} />
 
-        <Route path="/ingredientes">
-          <PlaceholderPage
-            title="Ingredientes Naturais"
-            description="Conheça em detalhes cada óleo, manteiga e extrato botânico que utilizamos em nossas formulações."
-          />
-        </Route>
-
         <Route path="/presentes">
           <PlaceholderPage
             title="Kits & Presentes"

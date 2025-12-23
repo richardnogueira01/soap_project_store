@@ -20,8 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, []);
 
   const navLinks = [
-    { name: "Coleções", path: "/colecoes" },
-    { name: "Ingredientes", path: "/ingredientes" },
+    { name: "Produtos", path: "/produtos" },
     { name: "Presentes", path: "/presentes" },
   ];
 
@@ -105,7 +104,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="space-y-4">
               <h3 className="text-xl font-serif font-semibold text-primary">Sobre Nós</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Criamos sabonetes artesanais com ingredientes naturais e muito carinho. 
+                Criamos sabonetes artesanais, esfoliantes para pele, perfumes para cabelo com ingredientes naturais, essências importadas e com muito carinho. 
                 Cada barra é uma experiência sensorial única, feita para cuidar de você e da natureza.
               </p>
             </div>
@@ -153,7 +152,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
           
           <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Frutteto Aróma. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Ser de Aroma. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>

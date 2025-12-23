@@ -24,7 +24,7 @@ export const muiTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Poppins", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
       fontFamily: '"Playfair Display", serif',
       fontWeight: 700,
