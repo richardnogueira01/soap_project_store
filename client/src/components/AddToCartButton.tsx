@@ -11,6 +11,7 @@ interface AddToCartButtonProps {
   showQuantity?: boolean;
   className?: string;
   onClick?: (e: React.MouseEvent) => void;
+  selectedVariant?: string;
 }
 
 export function AddToCartButton({
@@ -20,18 +21,19 @@ export function AddToCartButton({
   showQuantity = false,
   className = '',
   onClick,
+  selectedVariant,
 }: AddToCartButtonProps) {
   const { addToCart, state } = useCart();
   const [quantity, setQuantity] = useState(1);
 
-  const cartItem = state.items.find(item => item.product.id === product.id);
+  const cartItem = state.items.find(item => item.product.id === product.id && item.variant === selectedVariant);
   const currentQuantity = cartItem?.quantity || 0;
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     for (let i = 0; i < quantity; i++) {
-      addToCart(product);
+      addToCart(product, selectedVariant);
     }
     onClick?.(e);
   };

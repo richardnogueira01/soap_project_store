@@ -1,4 +1,5 @@
 import { useRoute, Link } from "wouter";
+import { useState } from "react";
 import { products } from "@/lib/products";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ShoppingBag, Check, Star } from "lucide-react";
@@ -8,6 +9,7 @@ import NotFound from "@/pages/NotFound";
 export default function ProductDetail() {
   const [, params] = useRoute("/produto/:id");
   const product = products.find(p => p.id === params?.id);
+  const [selectedVariant, setSelectedVariant] = useState<string | undefined>(undefined);
 
   if (!product) return <NotFound />;
 
@@ -39,17 +41,15 @@ export default function ProductDetail() {
               </div>
             </div>
             
-            {/* Thumbnails (Mock) */}
-            <div className="grid grid-cols-4 gap-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="aspect-square rounded-lg overflow-hidden bg-secondary/10 border border-border cursor-pointer hover:border-primary transition-colors">
-                  <img 
-                    src={product.image} 
-                    alt={`Thumbnail ${i}`}
-                    className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              ))}
+            {/* Thumbnail - Single Image */}
+            <div className="flex gap-4">
+              <div className="aspect-square rounded-lg overflow-hidden bg-secondary/10 border border-border cursor-pointer hover:border-primary transition-colors w-20 h-20">
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
             </div>
           </div>
 
@@ -63,11 +63,6 @@ export default function ProductDetail() {
               <span className="text-3xl font-semibold text-primary">
                 R$ {product.price.toFixed(2).replace('.', ',')}
               </span>
-              <div className="flex items-center gap-1 text-yellow-500 bg-yellow-50 px-2 py-1 rounded-md">
-                <Star className="h-4 w-4 fill-current" />
-                <span className="text-sm font-bold text-yellow-700">4.9</span>
-                <span className="text-xs text-yellow-600/80">(128 avaliações)</span>
-              </div>
             </div>
 
             <div className="prose prose-stone max-w-none mb-8">
@@ -75,6 +70,28 @@ export default function ProductDetail() {
                 {product.fullDescription}
               </p>
             </div>
+
+            {/* Variants */}
+            {product.variants && product.variants.length > 0 && (
+              <div className="mb-8">
+                <h3 className="font-serif text-lg font-semibold mb-4">Escolha o Aroma</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {product.variants.map((variant) => (
+                    <button
+                      key={variant.id}
+                      onClick={() => setSelectedVariant(variant.id)}
+                      className={`p-4 rounded-lg border-2 transition-all font-medium ${
+                        selectedVariant === variant.id
+                          ? 'border-primary bg-primary/10 text-primary'
+                          : 'border-border bg-background hover:border-primary/50'
+                      }`}
+                    >
+                      {variant.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Benefits */}
             <div className="mb-8">

@@ -8,51 +8,71 @@ export interface Product {
   image: string;
   category: string;
   benefits: string[];
+  variants?: {
+    id: string;
+    name: string;
+  }[];
 }
 
 export const products: Product[] = [
   {
-    id: "sabonete-morango-chia",
-    name: "Morango & Chia",
-    price: 10.90,
-    description: "Relaxe corpo e mente com o poder da fragrancia de morango com champanhe",
-    fullDescription: "Nosso sabonete de Morango & Chia é uma verdadeira terapia para o banho. Feito com óleo essencial de Morango e Chia, ele ajuda a reduzir o estresse e a ansiedade após um dia longo. Sua base rica em manteiga de Karité garante uma hidratação profunda, enquanto os ingredientes naturais proporcionam uma esfoliação suave e natural.",
-    ingredients: ["Lauril", "Óleo de Coco", "Manteiga de Karité", "Óleo Essencial de Morango", "Chia"],
-    image: "/images/hero-soap.png",
+    id: "sabonete-massageador-mel",
+    name: "Sabonete Massageador Mel",
+    price: 13.50,
+    description: "Sabonete massageador com mel puro para hidratação e relaxamento",
+    fullDescription: "Nosso sabonete massageador com mel oferece uma experiência completa de autocuidado. O mel puro atua como umectante natural, retendo a hidratação na pele, enquanto a textura do sabonete permite uma massagem suave e revitalizante. Perfeito para relaxar após um dia longo.",
+    ingredients: ["Azeite de Oliva", "Manteiga de Karité", "Mel Silvestre", "Óleo de Amêndoas Doces", "Vitamina E"],
+    image: "/images/sabonetemel.jfif",
     category: "Sabonetes",
-    benefits: ["Calmante natural", "Hidratação profunda", "Esfoliação suave", "Aroma terapêutico"]
+    benefits: ["Hidratação profunda", "Calmante natural", "Massagem relaxante", "Aroma reconfortante"]
   },
   {
-    id: "argila-verde-detox",
-    name: "Argila Verde Detox",
-    price: 32.50,
-    description: "Purificação profunda para peles oleosas e mistas.",
-    fullDescription: "O sabonete de Argila Verde é formulado especificamente para controlar a oleosidade e desintoxicar a pele. A argila verde atua como um ímã para impurezas e toxinas, enquanto o óleo essencial de Tea Tree (Melaleuca) oferece propriedades antissépticas e cicatrizantes. Ideal para uso facial e corporal.",
-    ingredients: ["Azeite de Oliva", "Óleo de Palma Sustentável", "Argila Verde", "Óleo Essencial de Tea Tree", "Extrato de Alecrim"],
-    image: "/images/collection-display.png",
-    category: "Esfoliantes de Pele",
-    benefits: ["Controle de oleosidade", "Ação antisséptica", "Limpeza profunda", "Secativo natural"]
+    id: "sabonete-massageador-acafrao",
+    name: "Sabonete Massageador Açafrão",
+    price: 13.50,
+    description: "Sabonete massageador com açafrão para revitalização e energia",
+    fullDescription: "Especialmente formulado com açafrão, este sabonete massageador oferece uma experiência energizante e revigorante. O açafrão é conhecido por suas propriedades anti-inflamatórias e antioxidantes. A textura permite uma massagem suave que estimula a circulação e deixa a pele revitalizada.",
+    ingredients: ["Azeite de Oliva", "Manteiga de Cacau", "Açafrão em Pó", "Óleo Essencial de Gengibre", "Vitamina E"],
+    image: "/images/saboneteacafrao.jpg",
+    category: "Sabonetes",
+    benefits: ["Propriedades anti-inflamatórias", "Estimula circulação", "Revigorante", "Aroma exótico"]
   },
   {
-    id: "aveia-mel-suave",
-    name: "Aveia & Mel",
-    price: 26.00,
-    description: "Cuidado extra suave para peles sensíveis e delicadas.",
-    fullDescription: "Um clássico da saboaria artesanal, nossa versão de Aveia & Mel é um abraço para peles sensíveis. O mel puro atua como umectante natural, retendo a hidratação na pele, enquanto a aveia coloidal acalma irritações e coceiras. Sem óleos essenciais fortes, possui apenas o aroma doce e reconfortante dos próprios ingredientes.",
-    ingredients: ["Azeite de Oliva", "Manteiga de Cacau", "Mel Silvestre", "Aveia em Flocos", "Óleo de Amêndoas Doces"],
-    image: "/images/ingredient-olive.png",
-    category: "Perfumes para Cabelos",
-    benefits: ["Hipoalergênico", "Calmante para irritações", "Nutrição intensa", "Seguro para crianças"]
+    id: "kit-sabonete-massageador-trio",
+    name: "Kit 2 Sabonetes Massageador",
+    price: 25.00,
+    description: "Kit com 2 sabonetes massageador - Açafrão e Mel",
+    fullDescription: "Aproveite o melhor dos dois mundos! Este kit inclui um Sabonete Massageador de Mel e um de Açafrão, perfeitos para uma experiência completa de cuidado. Ideal como presente ou para ter sempre à mão os dois aromas relaxantes e revigorantes.",
+    ingredients: ["Azeite de Oliva", "Manteiga de Karité", "Manteiga de Cacau", "Mel Silvestre", "Açafrão em Pó", "Óleo de Amêndoas Doces", "Vitamina E"],
+    image: "/images/acafraoemel.jfif",
+    category: "Sabonetes",
+    benefits: ["Combo econômico", "Dois aromas diferentes", "Hidratação e energia", "Ótimo presenteado"]
   },
   {
-    id: "carvao-ativado",
-    name: "Carvão Ativado & Menta",
-    price: 30.00,
-    description: "Frescor intenso e renovação celular.",
-    fullDescription: "Para quem busca uma sensação de limpeza revigorante. O carvão ativado remove poluentes e células mortas, promovendo uma renovação da pele. O toque de menta pimenta traz um frescor gelado que energiza e desperta, perfeito para banhos matinais ou pós-treino.",
-    ingredients: ["Óleo de Coco", "Óleo de Rícino", "Carvão Ativado em Pó", "Óleo Essencial de Menta Piperita", "Vitamina E"],
-    image: "/images/about-craft.png",
-    category: "Energizante",
-    benefits: ["Limpeza profunda", "Sensação refrescante", "Renovação celular", "Combate odores"]
+    id: "sabonete-80g",
+    name: "Sabonete 80g Frutas Tropicais",
+    price: 10.50,
+    description: "Sabonete natural com frutas tropicais - Maracujá, Morango e Limão",
+    fullDescription: "Uma explosão de sabores tropicais em forma de sabonete! Combinando os aromas revigorantes de maracujá, morango e limão, este sabonete oferece uma experiência sensorial única. Feito com óleos essenciais naturais, deixa a pele macia, perfumada e revigorada.",
+    ingredients: ["Óleo de Coco", "Óleo de Palma Sustentável", "Óleo Essencial de Maracujá", "Óleo Essencial de Morango", "Óleo Essencial de Limão", "Manteiga de Karité"],
+    image: "/images/triosabonete.jfif",
+    category: "Sabonetes",
+    benefits: ["Aroma tropical", "Limpeza suave", "Revitalizante", "Tamanho prático"],
+    variants: [
+      { id: "sabonete-80g-morango", name: "Morango" },
+      { id: "sabonete-80g-maracuja", name: "Maracujá" },
+      { id: "sabonete-80g-limao", name: "Limão" }
+    ]
+  },
+  {
+    id: "perfume-capilar-unitario",
+    name: "Perfume Capilar Unitário",
+    price: 29.99,
+    description: "Perfume capilar natural com essências importadas",
+    fullDescription: "Nosso perfume capilar unitário é uma solução sofisticada para dar aroma e brilho aos seus cabelos. Feito com essências importadas de qualidade premium, oferece um aroma duradouro sem resíduos. Ideal para finalizar o penteado ou revigorar os cabelos durante o dia.",
+    ingredients: ["Álcool de Cereais", "Essências Importadas", "Óleo de Argan", "Vitamina E", "Extrato de Camomila"],
+    image: "/images/capilar.jfif",
+    category: "Perfumes Capilares",
+    benefits: ["Aroma duradouro", "Sem resíduos", "Brilho natural", "Essências importadas"]
   }
 ];

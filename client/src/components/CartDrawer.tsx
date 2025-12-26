@@ -67,7 +67,7 @@ export function CartDrawer() {
               <div className="flex-1 overflow-y-auto py-4">
                 <div className="space-y-4">
                   {state.items.map((item) => (
-                    <Card key={item.product.id} elevation={1}>
+                    <Card key={`${item.product.id}-${item.variant}`} elevation={1}>
                       <CardContent sx={{ p: 3 }}>
                         <Box display="flex" alignItems="center" gap={2}>
                           <Box
@@ -88,6 +88,11 @@ export function CartDrawer() {
                             <Typography variant="subtitle1" fontWeight="bold" noWrap>
                               {item.product.name}
                             </Typography>
+                            {item.variant && (
+                              <Typography variant="caption" color="text.secondary" display="block">
+                                Sabor: {item.variant}
+                              </Typography>
+                            )}
                             <Typography variant="body2" color="text.secondary">
                               R$ {item.product.price.toFixed(2)}
                             </Typography>
@@ -96,7 +101,7 @@ export function CartDrawer() {
                           <Box display="flex" alignItems="center" gap={1}>
                             <IconButton
                               size="small"
-                              onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
+                              onClick={() => updateQuantity(item.product.id, item.quantity - 1, item.variant)}
                               sx={{ bgcolor: 'grey.100', '&:hover': { bgcolor: 'grey.200' } }}
                             >
                               <Remove fontSize="small" />
@@ -108,7 +113,7 @@ export function CartDrawer() {
 
                             <IconButton
                               size="small"
-                              onClick={() => updateQuantity(item.product.id, item.quantity + 1)}
+                              onClick={() => updateQuantity(item.product.id, item.quantity + 1, item.variant)}
                               sx={{ bgcolor: 'grey.100', '&:hover': { bgcolor: 'grey.200' } }}
                             >
                               <Add fontSize="small" />
@@ -116,7 +121,7 @@ export function CartDrawer() {
 
                             <IconButton
                               size="small"
-                              onClick={() => removeFromCart(item.product.id)}
+                              onClick={() => removeFromCart(item.product.id, item.variant)}
                               color="error"
                               sx={{ ml: 1 }}
                             >
