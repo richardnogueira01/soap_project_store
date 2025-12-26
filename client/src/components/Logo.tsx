@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImage from './serdearomalogo.jpg';
 
 interface LogoProps {
   size?: "sm" | "md" | "lg";
@@ -14,7 +15,7 @@ export function Logo({ size = "md", className = "" }: LogoProps) {
 
   return (
     <img
-      src="/src/components/serdearomalogo.jpg"
+      src={logoImage}
       alt="Ser de Aroma Logo"
       className={`${sizeMap[size]} object-contain rounded-lg ${className}`}
     />

@@ -20,7 +20,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, []);
 
   const navLinks = [
-    { name: "Produtos", path: "/produtos" },
+    { name: "Produtos", path: "/colecoes" },
     { name: "Presentes", path: "/presentes" },
   ];
 
