@@ -3,7 +3,7 @@
   "buildCommand": "pnpm build",
   "installCommand": "pnpm install",
   "framework": "vite",
-  "public": "dist/public",
+  "outputDirectory": "dist/public",
   "cleanUrls": true,
   "rewrites": [
     {
