@@ -2,6 +2,7 @@ import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { AnimatedList, AnimatedItem } from "@/components/animations/PageTransition";
 
 export default function Collections() {
   const [filter, setFilter] = useState<string>("Todos");
@@ -24,7 +25,7 @@ export default function Collections() {
             Nossas Coleções
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Explore nossa seleção de sabonetes artesanais, cada um formulado para proporcionar 
+            Explore nossa seleção de sabonetes artesanais, perfumes para cabelos e esfoliantes de pele! cada um formulado para proporcionar 
             uma experiência única de cuidado e bem-estar.
           </p>
         </div>
@@ -50,11 +51,13 @@ export default function Collections() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+        <AnimatedList className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {filteredProducts.map((product, index) => (
+            <AnimatedItem key={product.id} index={index}>
+              <ProductCard product={product} />
+            </AnimatedItem>
           ))}
-        </div>
+        </AnimatedList>
 
         {/* Empty State */}
         {filteredProducts.length === 0 && (

@@ -2,6 +2,7 @@ import { useRoute, Link } from "wouter";
 import { products } from "@/lib/products";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ShoppingBag, Check, Star } from "lucide-react";
+import { AddToCartButton } from "@/components/AddToCartButton";
 import NotFound from "@/pages/NotFound";
 
 export default function ProductDetail() {
@@ -103,16 +104,14 @@ export default function ProductDetail() {
             </div>
 
             {/* Actions */}
-            <div className="mt-auto flex flex-col sm:flex-row gap-4 pt-6 border-t border-border">
-              <div className="flex items-center border border-border rounded-full px-4 h-14 w-full sm:w-auto justify-between sm:justify-center gap-4">
-                <button className="text-xl font-bold text-muted-foreground hover:text-primary px-2">-</button>
-                <span className="font-semibold w-4 text-center">1</span>
-                <button className="text-xl font-bold text-muted-foreground hover:text-primary px-2">+</button>
-              </div>
-              
-              <Button size="lg" className="h-14 rounded-full flex-1 text-lg gap-2 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
-                <ShoppingBag className="h-5 w-5" /> Adicionar ao Carrinho
-              </Button>
+            <div className="mt-auto pt-6 border-t border-border">
+              <AddToCartButton
+                product={product}
+                variant="default"
+                size="lg"
+                showQuantity={true}
+                className="w-full h-14 rounded-full text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+              />
             </div>
           </div>
         </div>

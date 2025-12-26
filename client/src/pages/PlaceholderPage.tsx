@@ -26,7 +26,7 @@ export default function PlaceholderPage({ title, description }: PlaceholderPageP
         <h3 className="font-semibold text-foreground mb-2">Em Breve</h3>
         <p className="text-sm text-muted-foreground">
           Estamos preparando algo especial para esta seção. 
-          O sistema de compras online e catálogo completo estarão disponíveis em breve.
+          O catálogo completo estarão disponíveis em breve.
         </p>
       </div>
 

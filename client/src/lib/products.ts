@@ -12,14 +12,14 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: "lavanda-calmante",
-    name: "Lavanda Calmante",
-    price: 28.90,
-    description: "Relaxe corpo e mente com o poder da lavanda francesa.",
-    fullDescription: "Nosso sabonete de Lavanda Calmante é uma verdadeira terapia para o banho. Feito com óleo essencial de Lavanda Francesa autêntica, ele ajuda a reduzir o estresse e a ansiedade após um dia longo. Sua base rica em manteiga de Karité garante uma hidratação profunda, enquanto as flores secas de lavanda proporcionam uma esfoliação suave e natural.",
-    ingredients: ["Azeite de Oliva", "Óleo de Coco", "Manteiga de Karité", "Óleo Essencial de Lavanda", "Flores de Lavanda"],
+    id: "sabonete-morango-chia",
+    name: "Morango & Chia",
+    price: 10.90,
+    description: "Relaxe corpo e mente com o poder da fragrancia de morango com champanhe",
+    fullDescription: "Nosso sabonete de Morango & Chia é uma verdadeira terapia para o banho. Feito com óleo essencial de Morango e Chia, ele ajuda a reduzir o estresse e a ansiedade após um dia longo. Sua base rica em manteiga de Karité garante uma hidratação profunda, enquanto os ingredientes naturais proporcionam uma esfoliação suave e natural.",
+    ingredients: ["Lauril", "Óleo de Coco", "Manteiga de Karité", "Óleo Essencial de Morango", "Chia"],
     image: "/images/hero-soap.png",
-    category: "Relaxante",
+    category: "Sabonetes",
     benefits: ["Calmante natural", "Hidratação profunda", "Esfoliação suave", "Aroma terapêutico"]
   },
   {
@@ -30,7 +30,7 @@ export const products: Product[] = [
     fullDescription: "O sabonete de Argila Verde é formulado especificamente para controlar a oleosidade e desintoxicar a pele. A argila verde atua como um ímã para impurezas e toxinas, enquanto o óleo essencial de Tea Tree (Melaleuca) oferece propriedades antissépticas e cicatrizantes. Ideal para uso facial e corporal.",
     ingredients: ["Azeite de Oliva", "Óleo de Palma Sustentável", "Argila Verde", "Óleo Essencial de Tea Tree", "Extrato de Alecrim"],
     image: "/images/collection-display.png",
-    category: "Tratamento",
+    category: "Esfoliantes de Pele",
     benefits: ["Controle de oleosidade", "Ação antisséptica", "Limpeza profunda", "Secativo natural"]
   },
   {
@@ -41,7 +41,7 @@ export const products: Product[] = [
     fullDescription: "Um clássico da saboaria artesanal, nossa versão de Aveia & Mel é um abraço para peles sensíveis. O mel puro atua como umectante natural, retendo a hidratação na pele, enquanto a aveia coloidal acalma irritações e coceiras. Sem óleos essenciais fortes, possui apenas o aroma doce e reconfortante dos próprios ingredientes.",
     ingredients: ["Azeite de Oliva", "Manteiga de Cacau", "Mel Silvestre", "Aveia em Flocos", "Óleo de Amêndoas Doces"],
     image: "/images/ingredient-olive.png",
-    category: "Hidratante",
+    category: "Perfumes para Cabelos",
     benefits: ["Hipoalergênico", "Calmante para irritações", "Nutrição intensa", "Seguro para crianças"]
   },
   {
